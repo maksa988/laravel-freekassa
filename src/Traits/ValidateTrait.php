@@ -49,8 +49,8 @@ trait ValidateTrait
      */
     public function validateOrderFromHandle(Request $request)
     {
-        return (! $this->AllowIP($request->ip())
-                    || ! $this->validate($request)
-                    || ! $this->validateSignature($request));
+        return ($this->AllowIP($request->ip())
+                    && $this->validate($request)
+                    && $this->validateSignature($request));
     }
 }
