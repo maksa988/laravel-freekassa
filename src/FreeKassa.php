@@ -68,7 +68,7 @@ class FreeKassa
         // Locale for payment form
         $query['lang'] = config('freekassa.locale', 'ru');
 
-        // Payment locale
+        // Payment currency
         if(! is_null(config('freekassa.currency'))) {
             $query['i'] = config('freekassa.currency');
         }
