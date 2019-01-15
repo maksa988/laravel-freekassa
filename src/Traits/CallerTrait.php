@@ -23,6 +23,12 @@ trait CallerTrait
         return App::call(config('freekassa.searchOrder'), [$request, $request->input('MERCHANT_ORDER_ID')]);
     }
 
+    /**
+     * @param Request $request
+     * @param $order
+     * @return mixed
+     * @throws InvalidPaidOrder
+     */
     public function callPaidOrder(Request $request, $order)
     {
         if(is_null(config('freekassa.paidOrder')))
