@@ -1,5 +1,12 @@
 # Laravel payment processor package for FreeKassa gateway
 
+[![Latest Stable Version](https://poser.pugx.org/maksa988/laravel-freekassa/v/stable)](https://packagist.org/packages/maksa988/laravel-freekassa)
+[![Build Status](https://img.shields.io/travis/maksa988/laravel-freekassa/master.svg?style=flat-square)](https://travis-ci.org/maksa988/laravel-freekassa)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/5745baed-8382-4615-8cc1-d6cca55638fd/mini.png)](https://insight.sensiolabs.com/projects/5745baed-8382-4615-8cc1-d6cca55638fd)
+[![Quality Score](https://img.shields.io/scrutinizer/g/maksa988/laravel-freekassa.svg?style=flat-square)](https://scrutinizer-ci.com/g/maksa988/laravel-freekassa)
+[![Total Downloads](https://img.shields.io/packagist/dt/maksa988/laravel-freekassa.svg?style=flat-square)](https://packagist.org/packages/maksa988/laravel-freekassa)
+[![License](https://poser.pugx.org/maksa988/laravel-freekassa/license)](https://packagist.org/packages/maksa988/laravel-freekassa)
+
 Accept payments via FreeKassa ([free-kassa.ru](https://www.free-kassa.ru/)) using this Laravel framework package ([Laravel](https://laravel.com)).
 
 - receive payments, adding just the two callbacks

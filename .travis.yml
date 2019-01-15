@@ -1,0 +1,52 @@
+language: php
+
+env:
+  global:
+  - setup=basic
+
+matrix:
+  fast_finish: true
+  include:
+  - php: 5.6
+    env: setup=lowest FRAMEWORK_VERSION=5.3.10 testbench_VERSION=3.3.3
+  - php: 5.6
+    env: setup=stable FRAMEWORK_VERSION=5.3.* testbench_VERSION=3.3.3
+  - php: 5.6
+    env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.*
+  - php: 7.0
+    env: setup=lowest FRAMEWORK_VERSION=5.3.10 testbench_VERSION=3.3.3
+  - php: 7.0
+    env: setup=stable FRAMEWORK_VERSION=5.3.* testbench_VERSION=3.3.3
+  - php: 7.0
+    env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.*
+  - php: 7.1
+    env: setup=lowest FRAMEWORK_VERSION=5.3.10 testbench_VERSION=3.3.3
+  - php: 7.1
+    env: setup=stable FRAMEWORK_VERSION=5.3.* testbench_VERSION=3.3.3
+  - php: 7.1
+    env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.*
+
+sudo: false
+
+cache:
+  directories:
+  - $HOME/.composer/cache
+
+services:
+- memcached
+- redis-server
+
+before_install:
+- if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+- echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+- echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+- composer require "laravel/framework:${FRAMEWORK_VERSION}" --no-update
+- composer require "orchestra/testbench:${testbench_VERSION}" --no-update
+- travis_retry composer self-update
+
+install:
+- if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
+- if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable --no-suggest; fi
+- if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
+
+script: vendor/bin/phpunit
