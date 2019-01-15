@@ -1,7 +1,6 @@
 {
     "name": "maksa988/laravel-freekassa",
     "description": "FreeKassa payments for Laravel",
-    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {
