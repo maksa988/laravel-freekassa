@@ -43,6 +43,10 @@ trait ValidateTrait
         return true;
     }
 
+    /**
+     * @param Request $request
+     * @return bool
+     */
     public function validateOrderFromHandle(Request $request)
     {
         return (! $this->AllowIP($request->ip())
