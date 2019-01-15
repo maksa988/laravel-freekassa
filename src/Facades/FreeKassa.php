@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static string handle(Request $request)
- * @method static string getPayUrl($project_id, $amount, $order_id, $phone = null, $email = null, $user_parameters = [])
- * @method static string redirectToPayUrl($project_id, $amount, $order_id, $phone = null, $email = null, $user_parameters = [])
+ * @method static string getPayUrl($amount, $order_id, $phone = null, $email = null, $user_parameters = [])
+ * @method static string redirectToPayUrl($amount, $order_id, $phone = null, $email = null, $user_parameters = [])
  * @method static string getFormSignature($project_id, $amount, $secret, $order_id)
  *
  * @see \Maksa988\FreeKassa\FreeKassa

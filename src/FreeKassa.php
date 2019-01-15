@@ -23,7 +23,6 @@ class FreeKassa
     }
 
     /**
-     * @param $project_id
      * @param $amount
      * @param $order_id
      * @param null $phone
@@ -31,7 +30,7 @@ class FreeKassa
      * @param array $user_parameters
      * @return string
      */
-    public function getPayUrl($project_id, $amount, $order_id, $phone = null, $email = null, $user_parameters = [])
+    public function getPayUrl($amount, $order_id, $phone = null, $email = null, $user_parameters = [])
     {
         // Url to init payment on FreeKassa
         $url = config('freekassa.pay_url');
@@ -48,7 +47,7 @@ class FreeKassa
         }
 
         // Project id (merchat id)
-        $query['m'] = $project_id;
+        $query['m'] = config('freekassa.project_id');
 
         // Amount of payment
         $query['oa'] = $amount;
@@ -79,7 +78,6 @@ class FreeKassa
     }
 
     /**
-     * @param $project_id
      * @param $amount
      * @param $order_id
      * @param null $phone
@@ -87,9 +85,9 @@ class FreeKassa
      * @param array $user_parameters
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function redirectToPayUrl($project_id, $amount, $order_id, $phone = null, $email = null, $user_parameters = [])
+    public function redirectToPayUrl($amount, $order_id, $phone = null, $email = null, $user_parameters = [])
     {
-        return redirect()->away($this->getPayUrl($project_id, $amount, $order_id, $phone, $email, $user_parameters));
+        return redirect()->away($this->getPayUrl($amount, $order_id, $phone, $email, $user_parameters));
     }
 
     /**
