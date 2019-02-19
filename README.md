@@ -1,6 +1,7 @@
 # Laravel payment processor package for FreeKassa gateway
 
 [![Latest Stable Version](https://poser.pugx.org/maksa988/laravel-freekassa/v/stable)](https://packagist.org/packages/maksa988/laravel-freekassa)
+[![Build Status](https://travis-ci.org/maksa988/laravel-freekassa.svg?branch=master)](https://travis-ci.org/maksa988/laravel-freekassa)
 [![CodeFactor](https://www.codefactor.io/repository/github/maksa988/laravel-freekassa/badge)](https://www.codefactor.io/repository/github/maksa988/laravel-freekassa)
 [![Quality Score](https://img.shields.io/scrutinizer/g/maksa988/laravel-freekassa.svg?style=flat-square)](https://scrutinizer-ci.com/g/maksa988/laravel-freekassa)
 [![Total Downloads](https://img.shields.io/packagist/dt/maksa988/laravel-freekassa.svg?style=flat-square)](https://packagist.org/packages/maksa988/laravel-freekassa)
