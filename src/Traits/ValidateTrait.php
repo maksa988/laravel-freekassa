@@ -21,7 +21,7 @@ trait ValidateTrait
             'SIGN' => 'required',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             return false;
         }
 
@@ -36,7 +36,7 @@ trait ValidateTrait
     {
         $sign = $this->getSignature(config('freekassa.project_id'), $request->input('AMOUNT'), config('freekassa.secret_key_second'), $request->input('MERCHANT_ORDER_ID'));
 
-        if($request->input('SIGN') != $sign) {
+        if ($request->input('SIGN') != $sign) {
             return false;
         }
 
@@ -49,8 +49,8 @@ trait ValidateTrait
      */
     public function validateOrderFromHandle(Request $request)
     {
-        return ($this->AllowIP($request->ip())
+        return $this->AllowIP($request->ip())
                     && $this->validate($request)
-                    && $this->validateSignature($request));
+                    && $this->validateSignature($request);
     }
 }
