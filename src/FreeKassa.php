@@ -2,8 +2,8 @@
 
 namespace Maksa988\FreeKassa;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Maksa988\FreeKassa\Traits\CallerTrait;
 use Maksa988\FreeKassa\Traits\ValidateTrait;
 
@@ -40,9 +40,9 @@ class FreeKassa
 
         // If user parameters array doesn`t empty
         // add parameters to payment query
-        if(!empty($user_parameters)) {
+        if (! empty($user_parameters)) {
             foreach ($user_parameters as $parameter => $value) {
-                $query['us_'. $parameter] = $value;
+                $query['us_'.$parameter] = $value;
             }
         }
 
@@ -56,12 +56,12 @@ class FreeKassa
         $query['o'] = $order_id;
 
         // User phone (optional)
-        if(! is_null($phone)) {
+        if (! is_null($phone)) {
             $query['phone'] = $phone;
         }
 
         // User email (optional)
-        if(! is_null($email)) {
+        if (! is_null($email)) {
             $query['email'] = $email;
         }
 
@@ -69,12 +69,12 @@ class FreeKassa
         $query['lang'] = config('freekassa.locale', 'ru');
 
         // Payment currency
-        if(! is_null(config('freekassa.currency'))) {
+        if (! is_null(config('freekassa.currency'))) {
             $query['i'] = config('freekassa.currency');
         }
 
         // Merge url ang query and return
-        return $url ."?". http_build_query($query);
+        return $url.'?'.http_build_query($query);
     }
 
     /**
@@ -113,7 +113,7 @@ class FreeKassa
      */
     public function getFormSignature($project_id, $amount, $secret, $order_id)
     {
-        $hashStr = $project_id .':'. $amount .':'. $secret .':'. $order_id;
+        $hashStr = $project_id.':'.$amount.':'.$secret.':'.$order_id;
 
         return md5($hashStr);
     }
@@ -127,7 +127,7 @@ class FreeKassa
      */
     public function getSignature($project_id, $amount, $secret, $order_id)
     {
-        $hashStr = $project_id .':'. $amount .':'. $secret .':'. $order_id;
+        $hashStr = $project_id.':'.$amount.':'.$secret.':'.$order_id;
 
         return md5($hashStr);
     }
@@ -141,25 +141,25 @@ class FreeKassa
     public function handle(Request $request)
     {
         // Validate request from FreeKassa
-        if(! $this->validateOrderFromHandle($request)) {
+        if (! $this->validateOrderFromHandle($request)) {
             return $this->responseError('validateOrderFromHandle');
         }
 
         // Search and get order
         $order = $this->callSearchOrder($request);
 
-        if(! $order) {
+        if (! $order) {
             return $this->responseError('searchOrder');
         }
 
         // If order already paid return success
-        if(Str::lower($order['_orderStatus']) === 'paid') {
+        if (Str::lower($order['_orderStatus']) === 'paid') {
             return $this->responseYES();
         }
 
         // PaidOrder - update order info
         // if return false then return error
-        if(! $this->callPaidOrder($request, $order)) {
+        if (! $this->callPaidOrder($request, $order)) {
             return $this->responseError('paidOrder');
         }
 
@@ -173,7 +173,7 @@ class FreeKassa
      */
     public function responseError($error)
     {
-        return config('freekassa.errors.'. $error, $error);
+        return config('freekassa.errors.'.$error, $error);
     }
 
     /**
@@ -184,6 +184,6 @@ class FreeKassa
         // Must return 'YES' if paid successful
         // https://www.free-kassa.ru/docs/api.php#step3
 
-        return "YES";
+        return 'YES';
     }
 }

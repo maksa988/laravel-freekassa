@@ -17,9 +17,9 @@ trait CallerTrait
      */
     public function callSearchOrder(Request $request)
     {
-        if(is_null(config('freekassa.searchOrder')))
+        if (is_null(config('freekassa.searchOrder'))) {
             throw new InvalidSearchOrder();
-
+        }
         return App::call(config('freekassa.searchOrder'), [$request->input('MERCHANT_ORDER_ID')]);
     }
 
@@ -31,9 +31,9 @@ trait CallerTrait
      */
     public function callPaidOrder(Request $request, $order)
     {
-        if(is_null(config('freekassa.paidOrder')))
+        if (is_null(config('freekassa.paidOrder'))) {
             throw new InvalidPaidOrder();
-
+        }
         return App::call(config('freekassa.paidOrder'), [$order]);
     }
 }
