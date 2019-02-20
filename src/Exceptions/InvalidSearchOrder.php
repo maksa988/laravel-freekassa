@@ -12,10 +12,11 @@ class InvalidSearchOrder extends \Exception
      * @param int $code
      * @param Throwable|null $previous
      */
-    public function __construct($message = "", $code = 0, $previous = null)
+    public function __construct($message = '', $code = 0, $previous = null)
     {
-        if(empty($message))
-            $message = "FreeKassa config: searchOrder callback not set";
+        if (empty($message)) {
+            $message = 'FreeKassa config: searchOrder callback not set';
+        }
 
         parent::__construct($message, $code, $previous);
     }

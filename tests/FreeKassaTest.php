@@ -3,9 +3,9 @@
 namespace Maksa988\FreeKassa\Test;
 
 use Illuminate\Http\Request;
+use Maksa988\FreeKassa\Test\Fake\Order;
 use Maksa988\FreeKassa\Exceptions\InvalidPaidOrder;
 use Maksa988\FreeKassa\Exceptions\InvalidSearchOrder;
-use Maksa988\FreeKassa\Test\Fake\Order;
 
 class FreeKassaTest extends TestCase
 {

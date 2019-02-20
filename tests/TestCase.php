@@ -3,8 +3,8 @@
 namespace Maksa988\FreeKassa\Test;
 
 use Maksa988\FreeKassa\FreeKassa;
-use Maksa988\FreeKassa\FreeKassaServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Maksa988\FreeKassa\FreeKassaServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,9 +13,6 @@ class TestCase extends Orchestra
      */
     protected $freekassa;
 
-    /**
-     *
-     */
     public function setUp()
     {
         parent::setUp();
