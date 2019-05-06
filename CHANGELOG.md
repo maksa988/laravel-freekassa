@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-freekassa` will be documented in this file
 
+## 1.0.4 - 2019-05-06
+
+- add signature to pay url
+- remove support older versions
+- add support php 7.3
+- add tests
+
 ## 1.0.3 - 2019-02-20
 
 - add tests
