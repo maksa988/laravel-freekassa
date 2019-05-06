@@ -73,6 +73,12 @@ class FreeKassa
             $query['i'] = config('freekassa.currency');
         }
 
+        $query['s'] = $this->getFormSignature(
+            config('freekassa.project_id'),
+            $amount,
+            config('freekassa.secret_key'), $order_id
+        );
+
         // Merge url ang query and return
         return $url.'?'.http_build_query($query);
     }
