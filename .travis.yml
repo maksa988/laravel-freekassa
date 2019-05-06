@@ -14,16 +14,6 @@ matrix:
   - php: 5.6
     env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.* phpunit_VERSION=~5.7
   - php: 7.0
-    env: setup=lowest FRAMEWORK_VERSION=5.3.10 testbench_VERSION=3.3.3 phpunit_VERSION=~4.8
-  - php: 7.0
-    env: setup=stable FRAMEWORK_VERSION=5.3.* testbench_VERSION=3.3.3 phpunit_VERSION=~4.8
-  - php: 7.0
-    env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.* phpunit_VERSION=~5.7
-  - php: 7.1
-    env: setup=lowest FRAMEWORK_VERSION=5.3.10 testbench_VERSION=3.3.3 phpunit_VERSION=~4.8
-  - php: 7.1
-    env: setup=stable FRAMEWORK_VERSION=5.3.* testbench_VERSION=3.3.3 phpunit_VERSION=~4.8
-  - php: 7.1
     env: setup=stable FRAMEWORK_VERSION=5.4.* testbench_VERSION=3.4.* phpunit_VERSION=~5.7
   - php: 7.1
     env: setup=lowest FRAMEWORK_VERSION=5.5.* testbench_VERSION=3.5.* phpunit_VERSION=~6.0
