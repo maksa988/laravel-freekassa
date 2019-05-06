@@ -11,7 +11,7 @@ Accept payments via FreeKassa ([free-kassa.ru](https://www.free-kassa.ru/)) usin
 
 - receive payments, adding just the two callbacks
 
-#### Laravel 5.3, 5.4, PHP >= 5.6.4
+#### Laravel >= 5.5, PHP >= 7.1
 
 ## Installation
 
