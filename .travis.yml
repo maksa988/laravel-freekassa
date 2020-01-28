@@ -27,6 +27,8 @@ matrix:
     env: setup=lowest FRAMEWORK_VERSION=5.7.* testbench_VERSION=3.7.* phpunit_VERSION=^7.0
   - php: 7.3
     env: setup=lowest FRAMEWORK_VERSION=5.8.* testbench_VERSION=3.8.* phpunit_VERSION=^8.0
+  - php: 7.3
+    env: setup=lowest FRAMEWORK_VERSION=6.* testbench_VERSION=4.* phpunit_VERSION=^8.0
 
 sudo: false
 
