@@ -3,8 +3,8 @@
 namespace Maksa988\FreeKassa\Test;
 
 use Maksa988\FreeKassa\FreeKassa;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Maksa988\FreeKassa\FreeKassaServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

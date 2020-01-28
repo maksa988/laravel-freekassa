@@ -2,8 +2,8 @@
 
 namespace Maksa988\FreeKassa;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Maksa988\FreeKassa\Traits\CallerTrait;
 use Maksa988\FreeKassa\Traits\ValidateTrait;
 
