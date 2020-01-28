@@ -2,8 +2,8 @@
 
 namespace Maksa988\FreeKassa\Test\Fake;
 
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Order extends Model
 {
