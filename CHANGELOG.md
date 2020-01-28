@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-freekassa` will be documented in this file
 
+## 2.0.0 - 2020-01-28
+
+- support Laravel 6.*
+
 ## 1.0.4 - 2019-05-06
 
 - add signature to pay url

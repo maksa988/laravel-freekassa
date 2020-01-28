@@ -7,26 +7,12 @@ env:
 matrix:
   fast_finish: true
   include:
-  - php: 7.1
-    env: setup=lowest FRAMEWORK_VERSION=5.5.* testbench_VERSION=3.5.* phpunit_VERSION=~6.0
-  - php: 7.1
-    env: setup=lowest FRAMEWORK_VERSION=5.6.* testbench_VERSION=3.6.* phpunit_VERSION=^7.0
   - php: 7.2
-    env: setup=lowest FRAMEWORK_VERSION=5.5.* testbench_VERSION=3.5.3 phpunit_VERSION=~6.0
-  - php: 7.2
-    env: setup=lowest FRAMEWORK_VERSION=5.6.* testbench_VERSION=3.6.* phpunit_VERSION=^7.0
-  - php: 7.2
-    env: setup=lowest FRAMEWORK_VERSION=5.7.* testbench_VERSION=3.7.* phpunit_VERSION=^7.0
-  - php: 7.2
-    env: setup=lowest FRAMEWORK_VERSION=5.8.* testbench_VERSION=3.8.* phpunit_VERSION=^8.0
+    env: setup=lowest FRAMEWORK_VERSION=6.* testbench_VERSION=4.* phpunit_VERSION=^8.0
   - php: 7.3
-    env: setup=lowest FRAMEWORK_VERSION=5.5.* testbench_VERSION=3.5.3 phpunit_VERSION=~6.0
-  - php: 7.3
-    env: setup=lowest FRAMEWORK_VERSION=5.6.* testbench_VERSION=3.6.* phpunit_VERSION=^7.0
-  - php: 7.3
-    env: setup=lowest FRAMEWORK_VERSION=5.7.* testbench_VERSION=3.7.* phpunit_VERSION=^7.0
-  - php: 7.3
-    env: setup=lowest FRAMEWORK_VERSION=5.8.* testbench_VERSION=3.8.* phpunit_VERSION=^8.0
+    env: setup=lowest FRAMEWORK_VERSION=6.* testbench_VERSION=4.* phpunit_VERSION=^8.0
+  - php: 7.4
+    env: setup=lowest FRAMEWORK_VERSION=6.* testbench_VERSION=4.* phpunit_VERSION=^8.0
 
 sudo: false
 
