@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-freekassa` will be documented in this file
 
+## 3.0.0 - 2020-05-13
+
+- support Laravel 7.*
+
 ## 2.0.0 - 2020-01-28
 
 - support Laravel 6.*
