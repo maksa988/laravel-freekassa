@@ -7,12 +7,10 @@ env:
 matrix:
   fast_finish: true
   include:
-  - php: 7.2.5
-    env: setup=lowest FRAMEWORK_VERSION=7.* testbench_VERSION=5.* phpunit_VERSION=^8.0
   - php: 7.3
-    env: setup=lowest FRAMEWORK_VERSION=7.* testbench_VERSION=5.* phpunit_VERSION=^8.0
+    env: setup=lowest FRAMEWORK_VERSION=8.* testbench_VERSION=6.* phpunit_VERSION=^8.0
   - php: 7.4
-    env: setup=lowest FRAMEWORK_VERSION=7.* testbench_VERSION=5.* phpunit_VERSION=^8.0
+    env: setup=lowest FRAMEWORK_VERSION=8.* testbench_VERSION=6.* phpunit_VERSION=^8.0
 
 sudo: false
 
